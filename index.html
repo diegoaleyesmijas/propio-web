@@ -1,0 +1,1915 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>PROPIO — Infraestructura digital propia para tu barbería.</title>
+  <meta name="description" content="PROPIO es la infraestructura digital propia de tu barbería: web, reservas online, CRM y panel de gestión. Sin comisiones. Sin depender de intermediarios. Tus clientes, tu sistema, tu negocio." />
+  <meta name="theme-color" content="#2F3542" />
+  <link rel="canonical" href="https://propio.app" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PROPIO — Infraestructura digital propia para tu barbería" />
+  <meta property="og:description" content="Tu barbería con web propia, sistema de reservas sin comisiones y CRM. Alternativa real a plataformas externas. Tus clientes, tu sistema, tu negocio." />
+  <meta property="og:url" content="https://propio.app" />
+  <meta property="og:image" content="https://propio.app/og-image.png" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PROPIO — Infraestructura digital propia para tu barbería" />
+  <meta name="twitter:description" content="Web propia, reservas sin comisiones, CRM y panel de gestión. Alternativa real a intermediarios para tu barbería." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="logo/propio-icon.svg" />
+  <link rel="apple-touch-icon" href="logo/propio-icon.svg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "PROPIO",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Infraestructura digital propia para barberías: web, reservas online, CRM y panel de gestión. Alternativa a plataformas externas sin comisiones.",
+    "offers": {
+      "@type": "Offer",
+      "price": "29",
+      "priceCurrency": "EUR"
+    }
+  }
+  </script>
+  <style>
+    /* =============================================
+       DESIGN TOKENS
+    ============================================= */
+    :root {
+      /* Brand colors */
+      --grafito-900: #232833;
+      --grafito-800: #29303E;
+      --grafito-700: #2F3542;
+      --grafito-500: #4A5263;
+      --grafito-300: #7A8291;
+
+      --verde-700: #138A78;
+      --verde-600: #1A9E8A;
+      --verde-500: #20B29C;
+      --verde-400: #4DC4B2;
+      --verde-200: #B5E8E1;
+      --verde-100: #E0F7F3;
+
+      --marfil: #F6F3EE;
+      --marfil-dark: #EDE9E2;
+      --marfil-dark: #EDE9E2;
+      --blanco: #FFFFFF;
+
+      --texto: #2B313D;
+      --texto-secondary: #68707D;
+      --borde: #D8DDE3;
+      --fondo-suave: #F3F5F7;
+      --negro: #171A21;
+
+      --rojo-100: #FEE2E2;
+      --rojo-500: #DC2626;
+
+      --naranja-100: #FFF0E8;
+      --naranja-600: #C94D1A;
+
+      /* Spacing scale */
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-14: 3.5rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+      --space-28: 7rem;
+
+      /* Typography */
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --text-xs: 0.6875rem;
+      --text-sm: 0.875rem;
+      --text-base: 1rem;
+      --text-lg: 1.125rem;
+      --text-xl: 1.25rem;
+      --text-2xl: 1.5rem;
+      --text-3xl: 1.875rem;
+      --text-4xl: 2.25rem;
+      --text-5xl: 3rem;
+      --text-6xl: 3.75rem;
+
+      /* Radius */
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      --radius-2xl: 28px;
+      --radius-full: 9999px;
+
+      /* Shadows */
+      --shadow-sm: 0 1px 3px rgba(35,40,51,0.08), 0 1px 2px rgba(35,40,51,0.04);
+      --shadow-md: 0 4px 16px rgba(35,40,51,0.08), 0 2px 6px rgba(35,40,51,0.04);
+      --shadow-lg: 0 8px 32px rgba(35,40,51,0.10), 0 4px 12px rgba(35,40,51,0.06);
+      --shadow-xl: 0 16px 48px rgba(35,40,51,0.12), 0 8px 20px rgba(35,40,51,0.06);
+      --shadow-verde: 0 8px 24px rgba(32,178,156,0.18);
+
+      /* Container */
+      --container: 1120px;
+      --container-pad: 1.5rem;
+    }
+
+    /* =============================================
+       RESET & BASE
+    ============================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      color: var(--texto);
+      background-color: var(--marfil);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    ul { list-style: none; }
+
+    /* =============================================
+       UTILITIES
+    ============================================= */
+    .container {
+      max-width: var(--container);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: var(--container-pad);
+      padding-right: var(--container-pad);
+    }
+
+    .label {
+      display: inline-block;
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--verde-600);
+    }
+
+    /* =============================================
+       ANIMATIONS
+    ============================================= */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .anim-fade-up { animation: fadeUp 0.8s cubic-bezier(0.16,0.84,0.44,1) both; }
+    .anim-fade-up.d1 { animation-delay: 0.10s; }
+    .anim-fade-up.d2 { animation-delay: 0.18s; }
+    .anim-fade-up.d3 { animation-delay: 0.26s; }
+    .anim-fade-up.d4 { animation-delay: 0.34s; }
+    .anim-fade-up.d5 { animation-delay: 0.42s; }
+
+    /* Scroll-triggered: initially hidden, revealed by JS */
+    .reveal { opacity: 0; transform: translateY(24px); filter: blur(4px); transition: opacity 0.7s cubic-bezier(0.22,0.84,0.44,1), transform 0.7s cubic-bezier(0.22,0.84,0.44,1), filter 0.7s cubic-bezier(0.22,0.84,0.44,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); filter: blur(0); }
+
+    /* =============================================
+       NAVIGATION
+    ============================================= */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(246,243,238,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(216,221,227,0.5);
+    }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(246,243,238,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(216,221,227,0.5);
+      overflow: visible;
+      transition: box-shadow 0.35s cubic-bezier(0.32,0.72,0,1);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+      overflow: visible;
+    }
+    .nav-logo {
+      display: flex !important;
+      align-items: center !important;
+      position: relative;
+      z-index: 10;
+    }
+    .nav-logo img {
+      height: 130px !important;
+      width: auto !important;
+      display: block !important;
+      transition: transform 0.35s cubic-bezier(0.22,0.84,0.44,1), filter 0.3s ease !important;
+      transform-style: preserve-3d !important;
+      will-change: transform !important;
+      cursor: pointer !important;
+      filter: drop-shadow(0 2px 8px rgba(47,53,66,0.10));
+    }
+    .nav-logo:hover img {
+      filter: brightness(1.08) drop-shadow(0 4px 16px rgba(47,53,66,0.15)) !important;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: var(--space-8);
+    }
+    .nav-link {
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--texto-secondary);
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--grafito-700); }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: var(--verde-500);
+      color: var(--blanco);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: var(--radius-full);
+      transition: background 0.25s cubic-bezier(0.32,0.72,0,1), transform 0.15s cubic-bezier(0.32,0.72,0,1);
+      box-shadow: 0 4px 12px rgba(32,178,156,0.25);
+      cursor: pointer;
+    }
+    .nav-cta:hover { background: var(--verde-700); transform: translateY(-1px); }
+    .nav-cta:active { transform: scale(0.96); }
+    .nav-cta svg { transition: transform 0.3s cubic-bezier(0.32,0.72,0,1); }
+    .nav-cta:hover svg { transform: translateX(3px); }
+    .nav-mobile-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 8px;
+      cursor: pointer;
+    }
+    .nav-mobile-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--grafito-700);
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+
+    @media (max-width: 768px) {
+      .nav-inner {
+        position: relative;
+        justify-content: center !important;
+        height: 76px;
+        overflow: visible;
+      }
+      .nav-logo {
+        justify-content: center;
+      }
+      .nav-logo img {
+        height: 100px !important;
+      }
+      .nav-links { display: none !important; }
+      .nav-links.open {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--marfil);
+        border-bottom: 1px solid var(--borde);
+        padding: var(--space-6) var(--container-pad);
+        gap: var(--space-5);
+        align-items: flex-start;
+        z-index: 200;
+      }
+      .nav-mobile-toggle {
+        display: flex !important;
+        position: absolute;
+        right: var(--container-pad);
+      }
+    }
+
+    /* =============================================
+       HERO
+    ============================================= */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: var(--space-24) 0 var(--space-28);
+    }
+    @media (max-width: 900px) {
+      .hero { padding: var(--space-16) 0 var(--space-20); }
+    }
+
+    .hero-bg-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+    .hero-bg-orb-1 {
+      width: 560px; height: 560px;
+      top: -20%; right: -12%;
+      background: radial-gradient(circle, rgba(32,178,156,0.06) 0%, transparent 70%);
+    }
+    .hero-bg-orb-2 {
+      width: 380px; height: 380px;
+      bottom: -25%; left: -5%;
+      background: radial-gradient(circle, rgba(32,178,156,0.04) 0%, transparent 70%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: var(--verde-100);
+      color: var(--verde-700);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
+      margin-bottom: var(--space-6);
+    }
+    .hero-eyebrow-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--verde-500);
+      animation: pulse-dot 2s infinite;
+    }
+
+    .hero-h1 {
+      font-size: clamp(2.6rem, 5vw, 3.9rem);
+      font-weight: 800;
+      line-height: 1.06;
+      letter-spacing: -0.025em;
+      color: var(--grafito-700);
+      margin-bottom: var(--space-6);
+    }
+    .hero-h1 .accent { color: var(--verde-500); }
+
+    .hero-desc {
+      font-size: var(--text-lg);
+      line-height: 1.65;
+      color: var(--texto-secondary);
+      max-width: 500px;
+      margin-bottom: var(--space-8);
+    }
+    .hero-desc strong { color: var(--texto); font-weight: 600; }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin-bottom: var(--space-5);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: var(--verde-500);
+      color: var(--blanco);
+      font-weight: 700;
+      font-size: var(--text-base);
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      transition: background 0.25s cubic-bezier(0.32,0.72,0,1), transform 0.15s cubic-bezier(0.32,0.72,0,1), box-shadow 0.25s cubic-bezier(0.32,0.72,0,1);
+      box-shadow: var(--shadow-verde);
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background: var(--verde-700);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(32,178,156,0.28);
+    }
+    .btn-primary:active { transform: scale(0.97) translateY(-1px); }
+    .btn-primary svg { transition: transform 0.3s cubic-bezier(0.32,0.72,0,1); }
+    .btn-primary:hover svg { transform: translateX(4px); }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      border: 1.5px solid var(--borde);
+      color: var(--texto);
+      font-weight: 600;
+      font-size: var(--text-base);
+      padding: 13px 24px;
+      border-radius: var(--radius-full);
+      transition: border-color 0.25s cubic-bezier(0.32,0.72,0,1), color 0.2s, transform 0.15s cubic-bezier(0.32,0.72,0,1);
+      cursor: pointer;
+    }
+    .btn-ghost:hover {
+      border-color: var(--grafito-500);
+      color: var(--grafito-700);
+      transform: translateY(-1px);
+    }
+    .btn-ghost:active { transform: scale(0.97); }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: var(--texto-secondary);
+    }
+
+    /* Dashboard mockup */
+    .hero-mockup {
+      position: relative;
+    }
+    @media (max-width: 900px) {
+      .hero-mockup { display: none; }
+    }
+
+    .mockup-window {
+      background: var(--blanco);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--borde);
+      overflow: hidden;
+    }
+    .mockup-titlebar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      background: var(--marfil);
+      border-bottom: 1px solid var(--borde);
+    }
+    .mockup-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .mockup-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #FF5F57; }
+    .dot-yellow { background: #FFBD2E; }
+    .dot-green { background: #28CA41; }
+    .mockup-url {
+      font-size: var(--text-xs);
+      color: var(--texto-secondary);
+      font-weight: 500;
+    }
+    .mockup-user {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .mockup-user-avatar {
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: var(--grafito-700);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--blanco);
+    }
+
+    .mockup-body {
+      display: flex;
+      min-height: 340px;
+    }
+    .mockup-sidebar {
+      width: 52px;
+      background: var(--grafito-700);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 16px 0;
+      gap: 18px;
+    }
+    .mockup-nav-icon {
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mockup-nav-icon.active { background: var(--verde-500); }
+    .mockup-nav-icon.inactive { background: rgba(255,255,255,0.08); }
+    .mockup-nav-icon svg { color: var(--blanco); opacity: 0.9; }
+    .mockup-nav-icon.inactive svg { opacity: 0.4; }
+
+    .mockup-content { flex: 1; padding: 16px; display: flex; flex-direction: column; gap: 14px; }
+
+    .mockup-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .mockup-stat {
+      background: var(--marfil);
+      border-radius: 12px;
+      padding: 12px;
+    }
+    .mockup-stat-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--texto-secondary);
+    }
+    .mockup-stat-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--grafito-700);
+      margin: 4px 0 2px;
+    }
+    .mockup-stat-sub {
+      font-size: 9px;
+      color: var(--texto-secondary);
+    }
+    .mockup-stat.alert { border: 1px solid rgba(201,77,26,0.18); }
+    .mockup-stat.alert .mockup-stat-label,
+    .mockup-stat.alert .mockup-stat-value,
+    .mockup-stat.alert .mockup-stat-sub { color: var(--naranja-600); }
+
+    .mockup-agenda {
+      background: var(--marfil);
+      border-radius: 12px;
+      padding: 14px;
+      flex: 1;
+    }
+    .mockup-agenda-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .mockup-agenda-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--grafito-700);
+    }
+    .mockup-agenda-link {
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--verde-600);
+    }
+    .mockup-agenda-items { display: flex; flex-direction: column; gap: 7px; }
+    .mockup-agenda-item { display: flex; align-items: center; gap: 10px; }
+    .mockup-agenda-time { font-size: 9px; color: var(--texto-secondary); width: 30px; flex-shrink: 0; }
+    .mockup-agenda-slot {
+      flex: 1;
+      height: 26px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+    }
+    .mockup-agenda-slot.booked { background: var(--verde-100); }
+    .mockup-agenda-slot.free { background: var(--fondo-suave); }
+    .mockup-agenda-slot-text {
+      font-size: 9px;
+      font-weight: 600;
+    }
+    .mockup-agenda-slot.booked .mockup-agenda-slot-text { color: var(--verde-700); }
+    .mockup-agenda-slot.free .mockup-agenda-slot-text { color: var(--texto-secondary); }
+
+    .mockup-decoration {
+      position: absolute;
+      bottom: -8px; right: -8px;
+      width: 100%; height: 100%;
+      border: 2px solid rgba(32,178,156,0.15);
+      border-radius: var(--radius-xl);
+      z-index: -1;
+    }
+
+    /* =============================================
+       SECTION BASE
+    ============================================= */
+    .section { padding: var(--space-24) 0; }
+    .section-white { background: var(--blanco); }
+    .section-marfil { background: var(--marfil); }
+    .section-dark { background: var(--grafito-700); }
+
+    @media (max-width: 768px) {
+      .section { padding: var(--space-16) 0; }
+    }
+
+    .section-header { margin-bottom: var(--space-14); }
+    .section-header .label { margin-bottom: var(--space-3); }
+    .section-h2 {
+      font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--grafito-700);
+      margin-bottom: var(--space-4);
+    }
+    .section-desc {
+      font-size: var(--text-base);
+      line-height: 1.7;
+      color: var(--texto-secondary);
+      max-width: 580px;
+    }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-desc { margin-left: auto; margin-right: auto; }
+
+    /* =============================================
+       PROBLEM SECTION
+    ============================================= */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-14);
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .problem-grid { grid-template-columns: 1fr; gap: var(--space-10); }
+    }
+
+    .problem-text .section-h2 { margin-bottom: var(--space-5); }
+    .problem-text p {
+      font-size: var(--text-base);
+      line-height: 1.75;
+      color: var(--texto-secondary);
+      margin-bottom: var(--space-4);
+    }
+
+    .problem-cards { display: flex; flex-direction: column; gap: var(--space-4); }
+
+    .problem-card {
+      background: var(--marfil);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+    .problem-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .problem-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: var(--rojo-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--rojo-500);
+    }
+    .problem-card-title {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--grafito-700);
+      margin-bottom: var(--space-1);
+    }
+    .problem-card-desc {
+      font-size: var(--text-sm);
+      line-height: 1.65;
+      color: var(--texto-secondary);
+    }
+
+    /* =============================================
+       SOLUTION / FEATURES GRID
+    ============================================= */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-5);
+    }
+    @media (max-width: 700px) {
+      .features-grid { grid-template-columns: 1fr; }
+    }
+
+    .feature-card {
+      background: var(--blanco);
+      border: 1px solid var(--borde);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+    }
+    .feature-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(35,40,51,0.10);
+      border-color: rgba(32,178,156,0.2);
+    }
+    .feature-icon {
+      width: 42px; height: 42px;
+      border-radius: 12px;
+      background: var(--verde-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--verde-700);
+      margin-bottom: var(--space-5);
+    }
+    .feature-title {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--grafito-700);
+      margin-bottom: var(--space-2);
+    }
+    .feature-desc {
+      font-size: var(--text-sm);
+      line-height: 1.7;
+      color: var(--texto-secondary);
+    }
+
+    /* =============================================
+       WHAT'S INCLUDED (checklist)
+    ============================================= */
+    .includes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-8) var(--space-10);
+    }
+    @media (max-width: 900px) { .includes-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .includes-grid { grid-template-columns: 1fr; } }
+
+    .include-item { display: flex; gap: var(--space-3); align-items: flex-start; }
+    .include-check {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--verde-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: var(--verde-700);
+    }
+    .include-title {
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--grafito-700);
+      margin-bottom: 2px;
+    }
+    .include-desc {
+      font-size: var(--text-sm);
+      line-height: 1.6;
+      color: var(--texto-secondary);
+    }
+
+    /* =============================================
+       COMPARISON TABLE
+    ============================================= */
+    .table-wrap { overflow-x: auto; margin: 0 -1.5rem; padding: 0 1.5rem; }
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--text-sm);
+      min-width: 580px;
+    }
+    .compare-table thead tr {
+      border-bottom: 2px solid var(--borde);
+    }
+    .compare-table th {
+      padding: 14px 20px 14px 0;
+      text-align: left;
+      font-weight: 600;
+    }
+    .compare-table th.col-propio {
+      color: var(--verde-700);
+      font-weight: 700;
+    }
+    .compare-table th.col-propio .th-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .compare-table th.col-propio .th-logo img {
+      height: 28px;
+      width: auto;
+      display: inline-block;
+    }
+    .compare-table th.col-others { color: var(--grafito-500); font-weight: 500; }
+    .compare-table tbody tr {
+      border-bottom: 1px solid rgba(216,221,227,0.5);
+    }
+    .compare-table tbody tr:last-child { border-bottom: none; }
+    .compare-table td {
+      padding: 14px 20px 14px 0;
+      vertical-align: middle;
+    }
+    .compare-table td.row-label { color: var(--texto-secondary); }
+    .compare-table td.col-propio {
+      font-weight: 700;
+      color: var(--verde-700);
+    }
+    .compare-table td.col-others { color: var(--texto-secondary); }
+
+    .check-icon { color: var(--verde-600); }
+    .cross-icon { color: var(--rojo-500); }
+    .neutral-icon { color: var(--texto-secondary); }
+
+    .table-note {
+      margin-top: var(--space-5);
+      font-size: var(--text-xs);
+      color: var(--texto-secondary);
+      max-width: 600px;
+      line-height: 1.6;
+    }
+    .table-note strong { color: var(--texto); }
+
+    /* =============================================
+       PRICING
+    ============================================= */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    @media (max-width: 860px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
+    }
+
+    .tier-card {
+      background: var(--marfil);
+      border: 1px solid var(--borde);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      position: relative;
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+    .tier-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .tier-card.recommended {
+      background: var(--blanco);
+      border-color: rgba(32,178,156,0.4);
+      box-shadow: 0 0 0 1px rgba(32,178,156,0.15), var(--shadow-sm);
+    }
+    .tier-card.recommended:hover {
+      box-shadow: 0 0 0 1px rgba(32,178,156,0.25), var(--shadow-md);
+    }
+
+    .tier-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--verde-100);
+      color: var(--verde-700);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      margin-bottom: var(--space-4);
+    }
+
+    .tier-name {
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: var(--grafito-700);
+      margin-bottom: var(--space-1);
+    }
+    .tier-desc {
+      font-size: var(--text-xs);
+      color: var(--texto-secondary);
+      margin-bottom: var(--space-6);
+      min-height: 2.4em;
+    }
+    .tier-price {
+      margin-bottom: var(--space-7);
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+    .tier-price-amount {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--grafito-700);
+      letter-spacing: -0.03em;
+    }
+    .tier-price-period { font-size: var(--text-sm); color: var(--texto-secondary); }
+
+    .tier-features { list-style: none; display: flex; flex-direction: column; gap: var(--space-3); margin-bottom: var(--space-8); }
+    .tier-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      color: var(--texto);
+      line-height: 1.5;
+    }
+    .tier-feature-check { color: var(--verde-500); flex-shrink: 0; margin-top: 2px; }
+
+    .tier-cta {
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-weight: 600;
+      font-size: var(--text-sm);
+      padding: 12px 20px;
+      border-radius: var(--radius-full);
+      transition: all 0.2s;
+    }
+    .tier-cta-outline {
+      border: 1.5px solid var(--borde);
+      color: var(--texto);
+      transition: all 0.25s cubic-bezier(0.32,0.72,0,1);
+      cursor: pointer;
+    }
+    .tier-cta-outline:hover {
+      border-color: var(--grafito-700);
+      color: var(--grafito-700);
+      background: var(--marfil);
+    }
+    .tier-cta-outline:active { transform: scale(0.97); }
+    .tier-cta-solid {
+      background: var(--verde-500);
+      color: var(--blanco);
+      box-shadow: var(--shadow-verde);
+      transition: background 0.25s cubic-bezier(0.32,0.72,0,1), transform 0.15s cubic-bezier(0.32,0.72,0,1);
+      cursor: pointer;
+    }
+    .tier-cta-solid:hover {
+      background: var(--verde-700);
+      transform: translateY(-1px);
+    }
+    .tier-cta-solid:active { transform: scale(0.97); }
+
+    .pricing-note {
+      text-align: center;
+      font-size: var(--text-sm);
+      color: var(--texto-secondary);
+      margin-top: var(--space-6);
+    }
+
+    /* =============================================
+       FAQ
+    ============================================= */
+    .faq-list { display: flex; flex-direction: column; gap: var(--space-3); max-width: 720px; margin: 0 auto; }
+
+    .faq-item {
+      background: var(--marfil);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: background 0.25s cubic-bezier(0.32,0.72,0,1), box-shadow 0.25s cubic-bezier(0.32,0.72,0,1);
+    }
+    .faq-item:hover {
+      background: var(--marfil-dark);
+      box-shadow: var(--shadow-sm);
+    }
+    .faq-item summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      padding: var(--space-5) var(--space-6);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--grafito-700);
+      cursor: pointer;
+      user-select: none;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-chevron {
+      flex-shrink: 0;
+      color: var(--texto-secondary);
+      transition: transform 0.25s;
+    }
+    .faq-item[open] .faq-chevron { transform: rotate(180deg); }
+    .faq-answer {
+      padding: 0 var(--space-6) var(--space-5);
+      font-size: var(--text-sm);
+      line-height: 1.7;
+      color: var(--texto-secondary);
+    }
+
+    /* =============================================
+       CTA FINAL
+    ============================================= */
+    .cta-section {
+      background: var(--grafito-700);
+      padding: var(--space-24) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-bg {
+      position: absolute;
+      top: -40%; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(32,178,156,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .cta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.75);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
+      margin-bottom: var(--space-6);
+    }
+    .cta-badge-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--verde-400);
+      animation: pulse-dot 1.8s infinite;
+    }
+    .cta-h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--blanco);
+      margin-bottom: var(--space-4);
+    }
+    .cta-desc {
+      font-size: var(--text-base);
+      line-height: 1.7;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: var(--space-2);
+    }
+    .cta-sub {
+      font-size: var(--text-sm);
+      color: rgba(255,255,255,0.4);
+      margin-bottom: var(--space-10);
+    }
+    .cta-form {
+      display: flex;
+      gap: var(--space-3);
+      max-width: 480px;
+      margin: 0 auto var(--space-4);
+    }
+    @media (max-width: 540px) {
+      .cta-form { flex-direction: column; }
+    }
+    .cta-input {
+      flex: 1;
+      padding: 14px 20px;
+      border-radius: var(--radius-full);
+      border: none;
+      background: var(--blanco);
+      color: var(--texto);
+      font-family: inherit;
+      font-size: var(--text-sm);
+      font-weight: 500;
+      transition: box-shadow 0.2s;
+    }
+    .cta-input::placeholder { color: var(--texto-secondary); }
+    .cta-input:focus { outline: none; box-shadow: 0 0 0 3px rgba(32,178,156,0.3); }
+    .cta-submit {
+      padding: 14px 26px;
+      border-radius: var(--radius-full);
+      background: var(--verde-500);
+      color: var(--blanco);
+      font-family: inherit;
+      font-size: var(--text-sm);
+      font-weight: 700;
+      white-space: nowrap;
+      transition: background 0.25s cubic-bezier(0.32,0.72,0,1), transform 0.15s cubic-bezier(0.32,0.72,0,1);
+      box-shadow: 0 4px 16px rgba(32,178,156,0.3);
+      cursor: pointer;
+    }
+    .cta-submit:hover {
+      background: var(--verde-700);
+      transform: translateY(-1px);
+    }
+    .cta-submit:active { transform: scale(0.97); }
+    .cta-fine {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    .footer {
+      background: var(--negro);
+      color: rgba(255,255,255,0.45);
+      padding: var(--space-12) 0;
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-8);
+    }
+    .footer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @media (max-width: 600px) {
+      .footer-top { flex-direction: column; gap: var(--space-5); align-items: flex-start; }
+    }
+    .footer-logo img { height: 32px; opacity: 0.6; }
+    .footer-links {
+      display: flex;
+      gap: var(--space-6);
+      font-size: var(--text-xs);
+    }
+    .footer-links a { transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.75); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: var(--space-6);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @media (max-width: 600px) {
+      .footer-bottom { flex-direction: column; gap: var(--space-2); align-items: flex-start; }
+    }
+    .footer-copy { font-size: var(--text-xs); }
+    .footer-tagline { font-size: 10px; }
+
+    /* =============================================
+       DIVIDER ORNAMENT
+    ============================================= */
+    .divider-line {
+      width: 40px;
+      height: 2px;
+      background: var(--verde-500);
+      border-radius: 2px;
+      margin-bottom: var(--space-5);
+    }
+
+    /* =============================================
+       HIGHLIGHT ROW in table
+    ============================================= */
+    .compare-table tbody tr.highlight-row td { font-weight: 600; }
+
+  </style>
+</head>
+<body>
+
+  <!-- ======================== NAV ======================== -->
+  <nav class="nav" role="navigation" aria-label="Navegación principal">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo" aria-label="PROPIO – Inicio" id="nav-logo-link">
+        <img src="logo/propio-logo.svg" alt="PROPIO" id="nav-logo-img" />
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="#comparativa" class="nav-link">Comparativa</a>
+        <a href="#pricing" class="nav-link">Planes</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#cta" class="nav-cta" id="nav-cta-btn">
+          Solicitar demo
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+      <button class="nav-mobile-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ======================== HERO ======================== -->
+  <section class="hero section-marfil" aria-labelledby="hero-heading">
+    <div class="hero-bg-orb hero-bg-orb-1" aria-hidden="true"></div>
+    <div class="hero-bg-orb hero-bg-orb-2" aria-hidden="true"></div>
+
+    <div class="container hero-grid">
+      <!-- Copy -->
+      <div>
+        <span class="hero-eyebrow anim-fade-up" aria-hidden="true">
+          <span class="hero-eyebrow-dot"></span>
+          Infraestructura propia
+        </span>
+        <h1 class="hero-h1 anim-fade-up d1" id="hero-heading">
+          Tu barbería.<br />
+          Tus clientes.<br />
+          <span class="accent">Tu sistema.</span>
+        </h1>
+        <p class="hero-desc anim-fade-up d2">
+          PROPIO es infraestructura digital propia para tu barbería. Web, reservas, CRM y panel de gestión.
+          <strong>Sin comisiones a intermediarios. Sin depender de plataformas externas.</strong>
+        </p>
+        <div class="hero-actions anim-fade-up d3">
+          <a href="#cta" class="btn-primary" id="hero-cta-primary">
+            Solicitar demo gratuita
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="#comparativa" class="btn-ghost" id="hero-cta-secondary">Ver comparativa</a>
+        </div>
+        <p class="hero-note anim-fade-up d4">Sin compromiso · Te enseñamos el panel en 15 minutos.</p>
+      </div>
+
+      <!-- Dashboard mockup -->
+      <div class="hero-mockup" aria-hidden="true">
+        <div class="mockup-window">
+          <div class="mockup-titlebar">
+            <div class="mockup-dots">
+              <div class="mockup-dot dot-red"></div>
+              <div class="mockup-dot dot-yellow"></div>
+              <div class="mockup-dot dot-green"></div>
+              <span class="mockup-url" style="margin-left:10px;">Panel de control · PROPIO</span>
+            </div>
+            <div class="mockup-user">
+              <div class="mockup-user-avatar">P</div>
+            </div>
+          </div>
+          <div class="mockup-body">
+            <!-- Sidebar -->
+            <div class="mockup-sidebar">
+              <div class="mockup-nav-icon active">
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              </div>
+              <div class="mockup-nav-icon inactive">
+                <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              </div>
+              <div class="mockup-nav-icon inactive">
+                <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div style="flex:1"></div>
+              <div class="mockup-nav-icon inactive">
+                <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+            </div>
+            <!-- Content -->
+            <div class="mockup-content">
+              <div class="mockup-stats">
+                <div class="mockup-stat">
+                  <div class="mockup-stat-label">Citas hoy</div>
+                  <div class="mockup-stat-value">8</div>
+                  <div class="mockup-stat-sub">próximas</div>
+                </div>
+                <div class="mockup-stat">
+                  <div class="mockup-stat-label">Clientes</div>
+                  <div class="mockup-stat-value">342</div>
+                  <div class="mockup-stat-sub">+12 esta semana</div>
+                </div>
+                <div class="mockup-stat alert">
+                  <div class="mockup-stat-label">Inactivos</div>
+                  <div class="mockup-stat-value">8</div>
+                  <div class="mockup-stat-sub">pendientes</div>
+                </div>
+              </div>
+              <div class="mockup-agenda">
+                <div class="mockup-agenda-header">
+                  <span class="mockup-agenda-title">Agenda · Hoy</span>
+                  <span class="mockup-agenda-link">Ver todas</span>
+                </div>
+                <div class="mockup-agenda-items">
+                  <div class="mockup-agenda-item">
+                    <span class="mockup-agenda-time">10:30</span>
+                    <div class="mockup-agenda-slot booked"><span class="mockup-agenda-slot-text">Carlos M. · Corte + Barba</span></div>
+                  </div>
+                  <div class="mockup-agenda-item">
+                    <span class="mockup-agenda-time">11:30</span>
+                    <div class="mockup-agenda-slot booked"><span class="mockup-agenda-slot-text">Ana G. · Corte</span></div>
+                  </div>
+                  <div class="mockup-agenda-item">
+                    <span class="mockup-agenda-time">12:00</span>
+                    <div class="mockup-agenda-slot free"><span class="mockup-agenda-slot-text">Disponible</span></div>
+                  </div>
+                  <div class="mockup-agenda-item">
+                    <span class="mockup-agenda-time">16:00</span>
+                    <div class="mockup-agenda-slot booked"><span class="mockup-agenda-slot-text">Jorge R. · Corte + Tinte</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mockup-decoration" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== PROBLEM ======================== -->
+  <section id="problem" class="section section-white">
+    <div class="container">
+      <div class="problem-grid">
+        <div class="problem-text reveal">
+          <div class="divider-line"></div>
+          <span class="label">El problema</span>
+          <h2 class="section-h2" style="margin-top:0.75rem;">¿Tu barbería opera en terreno alquilado?</h2>
+          <p>Cuando una barbería depende de plataformas de terceros para gestionar sus reservas y clientes, cede algo más que una comisión: cede el control de su relación con el cliente.</p>
+          <p>Cada cliente que reserva a través de un intermediario, cada dato que queda en su plataforma, cada perfil que construyes dentro de su ecosistema: todo eso es valor que construye el activo de otro negocio.</p>
+        </div>
+        <div class="problem-cards reveal" style="transition-delay:0.1s;">
+          <div class="problem-card">
+            <div class="problem-icon" aria-hidden="true">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <p class="problem-card-title">Comisiones sobre tu trabajo</p>
+              <p class="problem-card-desc">Las plataformas de reservas cobran comisiones de hasta el 30% en primeras visitas. Cada cliente nuevo que llega a través de un intermediario te cuesta una parte de lo que genera.</p>
+            </div>
+          </div>
+          <div class="problem-card">
+            <div class="problem-icon" aria-hidden="true">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/></svg>
+            </div>
+            <div>
+              <p class="problem-card-title">Dependencia de terceros</p>
+              <p class="problem-card-desc">Tu operación vive dentro de un sistema que no controlas. Si la plataforma cambia sus condiciones, sube sus precios o tiene incidencias, tu negocio se ve afectado sin que puedas intervenir.</p>
+            </div>
+          </div>
+          <div class="problem-card">
+            <div class="problem-icon" aria-hidden="true">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <p class="problem-card-title">Tu marca en su escaparate</p>
+              <p class="problem-card-desc">Los marketplaces de citas muestran a tu competencia al lado de tu perfil. Cada hora dedicada a alimentar su plataforma construye el activo de un intermediario, no el tuyo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SOLUTION ======================== -->
+  <section id="solucion" class="section section-marfil">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="divider-line"></div>
+        <span class="label">La solución</span>
+        <h2 class="section-h2" style="margin-top:0.75rem;">Tu negocio. Tu marca. Tu sistema. Tus reglas.</h2>
+        <p class="section-desc">No alquilar la relación con el cliente. Construirla dentro de un sistema propio. Cada reserva suma valor a tu negocio, no a un intermediario.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="feature-title">Web propia con tu dominio</h3>
+          <p class="feature-desc">Tu barbería con presencia digital independiente. No una ficha dentro de un marketplace. Tu marca, tu URL, tu diseño. Sin anuncios de competencia en tu página.</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.08s;">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="feature-title">Reservas sin comisiones</h3>
+          <p class="feature-desc">El cliente reserva en tu web, no en la de un tercero. 0% de comisión en cada reserva. Recordatorios automáticos, cancelación online, gestión de disponibilidad.</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.16s;">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="feature-title">Base de datos de clientes</h3>
+          <p class="feature-desc">Cada cliente que reserva se queda en tu base de datos. Historial de visitas, preferencias, datos de contacto. La información es tuya, exportable, siempre disponible.</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.24s;">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h3 class="feature-title">Panel de gestión completo</h3>
+          <p class="feature-desc">Agenda, próximas citas, clientes, notificaciones, métricas. Todo lo que necesitas para gestionar tu barbería desde un panel diseñado para el día a día.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== WHAT'S INCLUDED ======================== -->
+  <section class="section section-white">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="divider-line"></div>
+        <span class="label">Qué incluye</span>
+        <h2 class="section-h2" style="margin-top:0.75rem;">Todo lo que necesitas para operar con tu propio sistema</h2>
+      </div>
+      <div class="includes-grid">
+        <div class="include-item reveal">
+          <div class="include-check" aria-hidden="true">
+            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <div>
+            <p class="include-title">Web propia responsive</p>
+            <p class="include-desc">Diseñada para tu barbería, optimizada para reservas desde cualquier dispositivo.</p>
+          </div>
+        </div>
+        <div class="include-item reveal" style="transition-delay:0.06s;">
+          <div class="include-check" aria-hidden="true">
+            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <div>
+            <p class="include-title">Reservas online 24/7</p>
+            <p class="include-desc">Tus clientes reservan desde tu web sin necesidad de apps ni intermediarios.</p>
+          </div>
+        </div>
+        <div class="include-item reveal" style="transition-delay:0.12s;">
+          <div class="include-check" aria-hidden="true">
+            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <div>
+            <p class="include-title">CRM con historial completo</p>
+            <p class="include-desc">Cada cliente con su historial de visitas, datos y preferencias. Siempre accesible.</p>
+          </div>
+        </div>
+        <div class="include-item reveal" style="transition-delay:0.18s;">
+          <div class="include-check" aria-hidden="true">
+            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <div>
+            <p class="include-title">Detección de clientes inactivos</p>
+            <p class="include-desc">El sistema identifica clientes que no visitan tu barbería y te ayuda a recuperarlos.</p>
+          </div>
+        </div>
+        <div class="include-item reveal" style="transition-delay:0.24s;">
+          <div class="include-check" aria-hidden="true">
+            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <div>
+            <p class="include-title">Recordatorios automáticos</p>
+            <p class="include-desc">Email y notificaciones para reducir ausencias y mantener tu agenda ocupada.</p>
+          </div>
+        </div>
+        <div class="include-item reveal" style="transition-delay:0.30s;">
+          <div class="include-check" aria-hidden="true">
+            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <div>
+            <p class="include-title">Sin comisiones por reserva</p>
+            <p class="include-desc">0% del importe de cada reserva. El 100% del valor del servicio se queda en tu negocio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== COMPARISON ======================== -->
+  <section id="comparativa" class="section section-marfil">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="divider-line"></div>
+        <span class="label">Comparativa</span>
+        <h2 class="section-h2" style="margin-top:0.75rem;">Infraestructura propia vs. sistemas de terceros</h2>
+        <p class="section-desc">La diferencia fundamental: PROPIO no es un marketplace ni una plataforma de reservas externa. Es la infraestructura digital de tu barbería.</p>
+      </div>
+      <div class="table-wrap reveal" style="transition-delay:0.1s;">
+        <table class="compare-table" aria-label="Comparativa PROPIO vs. plataformas de terceros">
+          <thead>
+            <tr>
+              <th scope="col" style="width:35%;"></th>
+              <th scope="col" class="col-propio">
+                <div class="th-logo">
+                  <img src="logo/propio-logo.svg" alt="PROPIO" />
+                </div>
+              </th>
+              <th scope="col" class="col-others">Plataformas de reservas</th>
+              <th scope="col" class="col-others">Marketplaces de citas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight-row">
+              <td class="row-label">Propiedad de los datos de clientes</td>
+              <td class="col-propio">
+                <span class="check-icon" aria-label="Sí">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display:inline-block;vertical-align:middle;margin-right:5px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                </span>Tuyos, siempre
+              </td>
+              <td class="col-others">Pertenecen a la plataforma</td>
+              <td class="col-others">Pertenecen al marketplace</td>
+            </tr>
+            <tr class="highlight-row">
+              <td class="row-label">Web propia con dominio</td>
+              <td class="col-propio">
+                <span class="check-icon" aria-label="Sí">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display:inline-block;vertical-align:middle;margin-right:5px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                </span>Sí
+              </td>
+              <td class="col-others">No (perfil en la plataforma)</td>
+              <td class="col-others">No (perfil en el marketplace)</td>
+            </tr>
+            <tr class="highlight-row">
+              <td class="row-label">Control total de la marca</td>
+              <td class="col-propio">
+                <span class="check-icon" aria-label="Sí">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display:inline-block;vertical-align:middle;margin-right:5px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                </span>Completo
+              </td>
+              <td class="col-others">Limitado</td>
+              <td class="col-others">Ninguno</td>
+            </tr>
+            <tr class="highlight-row">
+              <td class="row-label">Dependencia de la plataforma</td>
+              <td class="col-propio">
+                <span class="check-icon" aria-label="Sin dependencia">
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display:inline-block;vertical-align:middle;margin-right:5px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                </span>Ninguna
+              </td>
+              <td class="col-others">Total</td>
+              <td class="col-others">Alta</td>
+            </tr>
+            <tr>
+              <td class="row-label">Comisiones por reserva</td>
+              <td class="col-propio">0%</td>
+              <td class="col-others">Variables, hasta 30%</td>
+              <td class="col-others">Variables según volumen</td>
+            </tr>
+            <tr>
+              <td class="row-label">CRM con historial de clientes</td>
+              <td class="col-propio">Completo</td>
+              <td class="col-others">Básico o limitado</td>
+              <td class="col-others">Limitado al perfil</td>
+            </tr>
+            <tr>
+              <td class="row-label">Detección de clientes inactivos</td>
+              <td class="col-propio">Sí</td>
+              <td class="col-others">No disponible</td>
+              <td class="col-others">No disponible</td>
+            </tr>
+            <tr>
+              <td class="row-label">Exposición de competencia</td>
+              <td class="col-propio">No</td>
+              <td class="col-others">Depende de la plataforma</td>
+              <td class="col-others">Sí</td>
+            </tr>
+            <tr>
+              <td class="row-label">Precio mensual fijo</td>
+              <td class="col-propio">Desde 29€/mes</td>
+              <td class="col-others">Gratis o cuota baja + comisiones</td>
+              <td class="col-others">Gratis o cuota + comisiones</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="table-note">
+          <strong>Nota:</strong> En algunos modelos, las comisiones se aplican solo a primeras visitas o al procesamiento de pagos, no al total de reservas. Cada barbería debe evaluar su caso según su volumen y modelo de negocio.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== PRICING ======================== -->
+  <section id="pricing" class="section section-white">
+    <div class="container">
+      <div class="section-header center reveal">
+        <div class="divider-line" style="margin-left:auto;margin-right:auto;"></div>
+        <span class="label">Planes</span>
+        <h2 class="section-h2" style="margin-top:0.75rem;">Una infraestructura para cada barbería</h2>
+        <p class="section-desc">Todos los planes incluyen web propia, sistema de reservas y base de datos de clientes. Sin comisiones. Sin permanencia.</p>
+      </div>
+      <div class="pricing-grid">
+        <!-- Basic -->
+        <div class="tier-card reveal">
+          <h3 class="tier-name">Basic</h3>
+          <p class="tier-desc">Para barberías que empiezan a profesionalizar su operación.</p>
+          <div class="tier-price">
+            <span class="tier-price-amount">29</span>
+            <span class="tier-price-period">€/mes</span>
+          </div>
+          <ul class="tier-features">
+            <li class="tier-feature">
+              <svg class="tier-feature-check" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Web propia
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-check" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Sistema de reservas online
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-check" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Base de datos de clientes
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-check" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Gestión de agenda
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-check" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Notificación de nuevas citas
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-check" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Sin comisiones por reserva
+            </li>
+          </ul>
+          <a href="#cta" class="tier-cta tier-cta-outline" id="tier-basic-cta">Empezar</a>
+        </div>
+
+        <!-- Growth (Recommended) -->
+        <div class="tier-card recommended reveal" style="transition-delay:0.1s;">
+          <div class="tier-badge" aria-label="Plan recomendado">
+            <svg width="10" height="10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Más elegido
+          </div>
+          <h3 class="tier-name">Growth</h3>
+          <p class="tier-desc">Para barberías que quieren crecer con control total.</p>
+          <div class="tier-price">
+            <span class="tier-price-amount">49</span>
+            <span class="tier-price-period">€/mes</span>
+          </div>
+          <ul class="tier-features">
+            <li class="tier-feature">
+              <svg class="tier-feature-check" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Todo lo de Basic
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-check" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Web personalizada + dominio propio
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-check" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Gestión de servicios y horarios
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-check" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Historial completo de clientes
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-check" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Recordatorios automáticos
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-check" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Panel de control avanzado
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-check" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              0% comisiones
+            </li>
+          </ul>
+          <a href="#cta" class="tier-cta tier-cta-solid" id="tier-growth-cta">Quiero este plan</a>
+        </div>
+
+        <!-- Premium -->
+        <div class="tier-card reveal" style="transition-delay:0.2s;">
+          <h3 class="tier-name">Premium</h3>
+          <p class="tier-desc">Para barberías con equipo o varias sedes.</p>
+          <div class="tier-price">
+            <span class="tier-price-amount">79</span>
+            <span class="tier-price-period">€/mes</span>
+          </div>
+          <ul class="tier-features">
+            <li class="tier-feature">
+              <svg class="tier-feature-check" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Todo lo de Growth
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-check" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Marca completa y personalización total
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-check" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Automatizaciones avanzadas
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-check" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Métricas y analítica
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-check" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Soporte prioritario
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-check" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              Funciones multi-sede y equipo
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-check" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              0% comisiones
+            </li>
+          </ul>
+          <a href="#cta" class="tier-cta tier-cta-outline" id="tier-premium-cta">Ver plan</a>
+        </div>
+      </div>
+      <p class="pricing-note">Todos los planes incluyen setup y migración gratuita · Sin permanencia · Cancela cuando quieras.</p>
+    </div>
+  </section>
+
+  <!-- ======================== FAQ ======================== -->
+  <section id="faq" class="section section-marfil">
+    <div class="container">
+      <div class="section-header center reveal">
+        <div class="divider-line" style="margin-left:auto;margin-right:auto;"></div>
+        <span class="label">FAQ</span>
+        <h2 class="section-h2" style="margin-top:0.75rem;">Preguntas frecuentes</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item reveal" id="faq-1">
+          <summary>
+            ¿Qué diferencia a PROPIO de las plataformas de reservas tradicionales?
+            <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="faq-answer">Las plataformas tradicionales funcionan como intermediarios: gestionan las reservas a cambio de comisiones y retienen los datos de tus clientes en su ecosistema. PROPIO es un sistema que tú controlas: los datos son tuyos, el dominio es tuyo, las reservas no pagan comisión. No somos un marketplace, somos tu infraestructura digital.</p>
+        </details>
+        <details class="faq-item reveal" style="transition-delay:0.06s;" id="faq-2">
+          <summary>
+            ¿Puedo usar mi propio dominio?
+            <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="faq-answer">Sí. Puedes usar tu dominio propio (ej: tubarberia.es) o si no tienes, te proporcionamos uno en propio.app. La web se personaliza con tu marca, sin referencias a PROPIO visibles para tus clientes.</p>
+        </details>
+        <details class="faq-item reveal" style="transition-delay:0.12s;" id="faq-3">
+          <summary>
+            ¿Me ayudáis a migrar desde mi sistema actual?
+            <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="faq-answer">Sí. Nos encargamos de la migración completa: servicios, horarios, clientes e histórico. La migración se hace sin interrumpir tu agenda actual. Tú sigues operando con normalidad.</p>
+        </details>
+        <details class="faq-item reveal" style="transition-delay:0.18s;" id="faq-4">
+          <summary>
+            ¿Puedo cancelar cuando quiera?
+            <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="faq-answer">Sin permanencia. Cancela cuando quieras sin penalización. Tus datos son tuyos y puedes exportarlos en cualquier momento, incluso después de cancelar.</p>
+        </details>
+        <details class="faq-item reveal" style="transition-delay:0.24s;" id="faq-5">
+          <summary>
+            ¿Qué pasa con mis datos y mis clientes?
+            <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="faq-answer">Todos los datos de tus clientes te pertenecen. No los compartimos, no los vendemos, no los usamos para nada que no sea hacer funcionar tu sistema. Puedes exportarlos cuando quieras.</p>
+        </details>
+        <details class="faq-item reveal" style="transition-delay:0.30s;" id="faq-6">
+          <summary>
+            ¿Cuánto tardáis en activarlo?
+            <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="faq-answer">Si tienes los servicios y horarios definidos, podemos tener tu sistema operativo en 48 horas. La migración desde otra plataforma puede llevar 1–2 días adicionales, pero todo se hace sin interrumpir tu operación.</p>
+        </details>
+        <details class="faq-item reveal" style="transition-delay:0.36s;" id="faq-7">
+          <summary>
+            ¿Sirve para una barbería con varios empleados?
+            <svg class="faq-chevron" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <p class="faq-answer">Sí. El plan Premium incluye funciones para equipos y varias sedes. Cada barbero puede tener su propia agenda, servicios y horarios, todo bajo el mismo sistema y la misma marca.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== CTA FINAL ======================== -->
+  <section id="cta" class="cta-section" aria-labelledby="cta-heading">
+    <div class="cta-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="cta-inner">
+        <div class="cta-badge">
+          <span class="cta-badge-dot" aria-hidden="true"></span>
+          Plazas limitadas
+        </div>
+        <h2 class="cta-h2" id="cta-heading">Plan Fundadores: 3 plazas disponibles</h2>
+        <p class="cta-desc">Setup gratuito. Migración incluida. Precio reducido de por vida.</p>
+        <p class="cta-sub">Las primeras 3 barberías en entrar mantendrán su precio de fundador para siempre. Sin permanencia.</p>
+        <form class="cta-form" action="#" method="POST" id="demo-form">
+          <label for="cta-email" class="sr-only">Tu email</label>
+          <input
+            id="cta-email"
+            type="email"
+            name="email"
+            placeholder="Tu email profesional"
+            required
+            class="cta-input"
+            autocomplete="email"
+          />
+          <button type="submit" class="cta-submit" id="cta-submit-btn">Solicitar demo</button>
+        </form>
+        <p class="cta-fine">Te enseñamos el panel en 15 minutos · Sin compromiso · Sin spam</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-logo">
+            <img src="logo/propio-logo-white.svg" alt="PROPIO" />
+          </div>
+          <nav class="footer-links" aria-label="Navegación de pie de página">
+            <a href="#comparativa">Comparativa</a>
+            <a href="#pricing">Planes</a>
+            <a href="#faq">FAQ</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-copy">© 2026 PROPIO. La infraestructura digital propia de la barbería.</p>
+          <p class="footer-tagline">Tus clientes · Tu sistema · Tu negocio · Tus reglas.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Screen-reader only utility -->
+  <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0;}</style>
+
+  <script>
+    // Mobile nav toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+    });
+    // Close mobile menu on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      revealEls.forEach(el => observer.observe(el));
+    } else {
+      revealEls.forEach(el => el.classList.add('visible'));
+    }
+
+    // Logo micro-tilt effect on mousemove
+    const logoLink = document.getElementById('nav-logo-link');
+    const logoImg  = document.getElementById('nav-logo-img');
+    if (logoLink && logoImg) {
+      logoLink.addEventListener('mousemove', (e) => {
+        const rect = logoLink.getBoundingClientRect();
+        const cx = rect.left + rect.width  / 2;
+        const cy = rect.top  + rect.height / 2;
+        const dx = (e.clientX - cx) / (rect.width  / 2);  // –1 → +1
+        const dy = (e.clientY - cy) / (rect.height / 2);  // –1 → +1
+        const rotY =  dx * 7;   // max ±7deg horizontal
+        const rotX = -dy * 4;   // max ±4deg vertical
+        logoImg.style.transform = `perspective(420px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.06)`;
+      });
+      logoLink.addEventListener('mouseleave', () => {
+        logoImg.style.transform = 'perspective(420px) rotateX(0deg) rotateY(0deg) scale(1)';
+      });
+    }
+
+    // Nav shadow on scroll
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        nav.style.boxShadow = '0 2px 16px rgba(35,40,51,0.07)';
+      } else {
+        nav.style.boxShadow = 'none';
+      }
+    }, { passive: true });
+
+    // CTA form
+    const form = document.getElementById('demo-form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('cta-submit-btn');
+      btn.textContent = '¡Enviado! Nos pondremos en contacto.';
+      btn.style.background = '#138A78';
+      btn.disabled = true;
+    });
+  </script>
+</body>
+</html>
