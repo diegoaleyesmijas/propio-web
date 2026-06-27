@@ -798,56 +798,56 @@
     .testimonial-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: var(--space-14);
+      gap: var(--space-10);
       align-items: center;
     }
     @media (max-width: 768px) {
-      .testimonial-grid { grid-template-columns: 1fr; gap: var(--space-8); }
+      .testimonial-grid { grid-template-columns: 1fr; gap: var(--space-6); }
     }
     .testimonial-image {
-      border-radius: var(--radius-xl);
+      border-radius: var(--radius-lg);
       overflow: hidden;
-      box-shadow: var(--shadow-lg);
+      box-shadow: var(--shadow-md);
+      max-height: 340px;
     }
     .testimonial-image img {
       width: 100%;
-      height: 100%;
+      height: 340px;
       object-fit: cover;
       display: block;
     }
     .testimonial-card {
       background: var(--blanco);
       border: 1px solid var(--borde);
-      border-radius: var(--radius-xl);
-      padding: var(--space-8);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
       box-shadow: var(--shadow-sm);
     }
     .testimonial-quote {
-      font-size: 1.15rem;
-      line-height: 1.7;
+      font-size: 1rem;
+      line-height: 1.6;
       color: var(--texto);
       font-weight: 500;
-      margin-bottom: var(--space-6);
-      quotes: "“" "”";
+      margin-bottom: var(--space-4);
     }
     .testimonial-quote::before {
       content: "“";
-      font-size: 2.5rem;
+      font-size: 1.8rem;
       line-height: 0;
       color: var(--verde-500);
       display: block;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.3rem;
       font-weight: 800;
     }
     .testimonial-author {
       display: flex;
       align-items: center;
-      gap: var(--space-4);
-      padding-top: var(--space-5);
+      gap: var(--space-3);
+      padding-top: var(--space-4);
       border-top: 1px solid var(--borde);
     }
     .testimonial-avatar {
-      width: 48px; height: 48px;
+      width: 36px; height: 36px;
       border-radius: 50%;
       object-fit: cover;
       flex-shrink: 0;
@@ -871,9 +871,9 @@
       font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      padding: 4px 10px;
+      padding: 3px 8px;
       border-radius: var(--radius-full);
-      margin-bottom: var(--space-4);
+      margin-bottom: var(--space-3);
     }
 
     /* =============================================
@@ -1568,7 +1568,7 @@
   </section>
 
   <!-- ======================== PRIMER CLIENTE ======================== -->
-  <section class="section section-white">
+  <section class="section section-white" style="padding:var(--space-20) 0;">
     <div class="container">
       <div class="section-header center reveal">
         <div class="divider-line" style="margin-left:auto;margin-right:auto;"></div>
