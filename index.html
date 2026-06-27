@@ -793,6 +793,90 @@
     }
 
     /* =============================================
+       TESTIMONIAL / CASO REAL
+    ============================================= */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-14);
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .testimonial-grid { grid-template-columns: 1fr; gap: var(--space-8); }
+    }
+    .testimonial-image {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .testimonial-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .testimonial-card {
+      background: var(--blanco);
+      border: 1px solid var(--borde);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-sm);
+    }
+    .testimonial-quote {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--texto);
+      font-weight: 500;
+      margin-bottom: var(--space-6);
+      quotes: "“" "”";
+    }
+    .testimonial-quote::before {
+      content: "“";
+      font-size: 2.5rem;
+      line-height: 0;
+      color: var(--verde-500);
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 800;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      padding-top: var(--space-5);
+      border-top: 1px solid var(--borde);
+    }
+    .testimonial-avatar {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .testimonial-name {
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--grafito-700);
+    }
+    .testimonial-role {
+      font-size: var(--text-xs);
+      color: var(--texto-secondary);
+    }
+    .testimonial-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: var(--verde-100);
+      color: var(--verde-700);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      margin-bottom: var(--space-4);
+    }
+
+    /* =============================================
        COMPARISON TABLE
     ============================================= */
     .table-wrap { overflow-x: auto; margin: 0 -1.5rem; padding: 0 1.5rem; }
@@ -1477,6 +1561,41 @@
           <div>
             <p class="include-title">Sin comisiones por reserva</p>
             <p class="include-desc">0% del importe de cada reserva. El 100% del valor del servicio se queda en tu negocio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== PRIMER CLIENTE ======================== -->
+  <section class="section section-white">
+    <div class="container">
+      <div class="section-header center reveal">
+        <div class="divider-line" style="margin-left:auto;margin-right:auto;"></div>
+        <span class="label">Caso real</span>
+        <h2 class="section-h2" style="margin-top:0.75rem;">Nuestro primer cliente</h2>
+        <p class="section-desc" style="margin-left:auto;margin-right:auto;">De Booksy a PROPIO. Salón de Caballeros ahora gestiona sus citas con su propio sistema. Sin comisiones. Sin depender de terceros.</p>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-image reveal">
+          <img src="img/salon-barberia.jpeg" alt="Salón de Caballeros Barbería" loading="lazy" />
+        </div>
+        <div class="reveal" style="transition-delay:0.1s;">
+          <div class="testimonial-card">
+            <div class="testimonial-tag">
+              <svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+              Migrado desde Booksy
+            </div>
+            <div class="testimonial-quote">
+              Cada reserva que entra por PROPIO va directa a mi negocio, no a un intermediario. Tengo mi web, mi agenda, mis clientes. Es otro nivel.
+            </div>
+            <div class="testimonial-author">
+              <img src="img/luis-barbero.jpeg" alt="Luis" class="testimonial-avatar" loading="lazy" />
+              <div>
+                <div class="testimonial-name">Luis</div>
+                <div class="testimonial-role">Salón de Caballeros · PROPIO desde 2026</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

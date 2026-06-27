@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salón de Caballeros — Barbería en [Ciudad] | Reserva online</title>
+  <meta name="description" content="Salón de Caballeros, barbería profesional. Reserva tu cita online sin comisiones. Corte, barba y más." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --verde-500: #20B29C;
+      --verde-700: #138A78;
+      --grafito-700: #2F3542;
+      --grafito-900: #232833;
+      --marfil: #F6F3EE;
+      --blanco: #FFFFFF;
+      --texto: #2B313D;
+      --texto-sec: #68707D;
+      --borde: #D8DDE3;
+      --fondo: #F3F5F7;
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--texto);
+      background: var(--marfil);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(35,40,51,0.85) 0%, rgba(35,40,51,0.4) 100%);
+    }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(35,40,51,0.88) 0%, rgba(35,40,51,0.35) 100%);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      padding: 4rem 0;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.8);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      color: white;
+      margin-bottom: 1rem;
+    }
+    .hero h1 span { color: var(--verde-500); }
+    .hero p {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 2rem;
+      max-width: 480px;
+    }
+    .hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--verde-500);
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 28px;
+      border-radius: 9999px;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 8px 24px rgba(32,178,156,0.25);
+    }
+    .btn-primary:hover { background: var(--verde-700); transform: translateY(-2px); }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 13px 24px;
+      border-radius: 9999px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); }
+
+    /* Services */
+    .section { padding: 5rem 0; }
+    .section-white { background: var(--blanco); }
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-header .label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--verde-500);
+      margin-bottom: 0.75rem;
+    }
+    .divider {
+      width: 40px; height: 2px;
+      background: var(--verde-500);
+      border-radius: 2px;
+      margin: 0 auto 0.75rem;
+    }
+    .section h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--grafito-700);
+    }
+
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+    .service-card {
+      background: var(--marfil);
+      border-radius: 16px;
+      padding: 1.75rem;
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+    .service-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(35,40,51,0.08); }
+    .service-name {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--grafito-700);
+      margin-bottom: 0.25rem;
+    }
+    .service-desc {
+      font-size: 0.875rem;
+      color: var(--texto-sec);
+      margin-bottom: 1rem;
+    }
+    .service-price {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--verde-500);
+    }
+
+    /* CTA */
+    .cta-section {
+      background: var(--grafito-700);
+      text-align: center;
+      padding: 5rem 0;
+    }
+    .cta-section h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: white;
+      margin-bottom: 1rem;
+    }
+    .cta-section p {
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 2rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--grafito-900);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.8rem;
+    }
+    .footer span { color: var(--verde-500); }
+
+    @media (max-width: 768px) {
+      .hero-content { padding: 6rem 0 3rem; }
+      .section { padding: 3rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="img/salon-barberia.jpeg" alt="Salón de Caballeros" />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container" style="position:relative;z-index:2;width:100%;">
+      <div class="hero-content">
+        <div class="hero-tag">Barbería en [Ciudad]</div>
+        <h1>Salón de<br /><span>Caballeros</span></h1>
+        <p>Corte tradicional, barba perfecta y estilo clásico. Reserva tu cita online sin comisiones ni intermediarios.</p>
+        <div class="hero-actions">
+          <a href="https://codigodecaballeros.site" class="btn-primary" target="_blank">
+            Reservar cita
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="#servicios" class="btn-outline">Ver servicios</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="servicios" class="section section-white">
+    <div class="container">
+      <div class="section-header">
+        <div class="divider"></div>
+        <span class="label">Servicios</span>
+        <h2>Nuestros cortes y precios</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-name">Corte clásico</div>
+          <div class="service-desc">Corte a tijera y máquina con acabado profesional</div>
+          <div class="service-price">15€</div>
+        </div>
+        <div class="service-card">
+          <div class="service-name">Corte + Barba</div>
+          <div class="service-desc">Corte completo más perfilado de barba</div>
+          <div class="service-price">22€</div>
+        </div>
+        <div class="service-card">
+          <div class="service-name">Barba</div>
+          <div class="service-desc">Perfilado y arreglo de barba con navaja</div>
+          <div class="service-price">10€</div>
+        </div>
+        <div class="service-card">
+          <div class="service-name">Corte a navaja</div>
+          <div class="service-desc">Corte tradicional a navaja con acabado de lujo</div>
+          <div class="service-price">20€</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Reserva tu cita ahora</h2>
+      <p>Sin esperas, sin llamar. Elige día y hora en un clic.</p>
+      <a href="https://codigodecaballeros.site" class="btn-primary" target="_blank">
+        Reservar online
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>Salón de Caballeros · Gestionado con <span>PROPIO</span></p>
+    </div>
+  </footer>
+
+</body>
+</html>
