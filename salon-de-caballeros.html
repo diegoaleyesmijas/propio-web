@@ -10,7 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --dorado: #C6A45C; --dorado-hover: #B8963E; --dorado-light: #F5EDDC;
+      --dorado: #C9A234; --dorado-hover: #A8801A; --dorado-light: #F8F0DC;
+      --dorado-gradient: linear-gradient(135deg, #C9A234 0%, #D4AF37 50%, #A8801A 100%);
       --verde-500: #20B29C; --verde-700: #138A78; --verde-100: #E0F7F3;
       --grafito-700: #2F3542; --grafito-800: #29303E; --grafito-900: #232833;
       --marfil: #F5F0E8; --marfil-dark: #EBE4D8; --blanco: #FFFFFF;
@@ -26,6 +27,7 @@
     .container{max-width:1120px;margin:0 auto;padding:0 1.5rem}
     @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
     @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+    @keyframes goldShimmer{0%{background-position:-200% center}100%{background-position:200% center}}
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
     @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
@@ -47,7 +49,7 @@
     .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.8);font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:var(--radius-full);margin-bottom:1.5rem;backdrop-filter:blur(8px)}
     .hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--dorado);animation:pulse-dot 2s infinite}
     .hero h1{font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:800;line-height:1.04;letter-spacing:-.03em;color:white;margin-bottom:.75rem}
-    .hero h1 span{color:var(--dorado)}
+    .hero h1 span{background:var(--dorado-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
     .hero-rating{display:flex;align-items:center;gap:.5rem;margin-bottom:1.5rem}
     .hero-stars{color:#F59E0B;font-size:1.1rem;letter-spacing:2px}
     .hero-review-count{font-size:.875rem;color:rgba(255,255,255,.5)}
@@ -55,12 +57,12 @@
     .hero-stats{display:flex;gap:2rem;margin-bottom:2.5rem}
     .hero-stat{display:flex;flex-direction:column}
     .hero-stat-value{font-size:2rem;font-weight:800;color:white;letter-spacing:-.02em}
-    .hero-stat-value .count{color:var(--dorado)}
+    .hero-stat-value .count{background:var(--dorado-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
     .hero-stat-label{font-size:.75rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
     .hero-actions{display:flex;gap:.75rem;flex-wrap:wrap}
     .hero-address{margin-top:2rem;font-size:.8125rem;color:rgba(255,255,255,.35);display:flex;align-items:center;gap:.5rem}
-    .btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--dorado);color:white;font-weight:700;font-size:1rem;padding:16px 32px;border-radius:var(--radius-full);border:none;cursor:pointer;transition:background .25s cubic-bezier(.32,.72,0,1),transform .15s cubic-bezier(.32,.72,0,1),box-shadow .25s;box-shadow:0 8px 28px rgba(198,164,92,.25)}
-    .btn-primary:hover{background:var(--dorado-hover);transform:translateY(-2px);box-shadow:0 14px 36px rgba(198,164,92,.35)}
+    .btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--dorado-gradient);background-size:200% auto;color:white;font-weight:700;font-size:1rem;padding:16px 32px;border-radius:var(--radius-full);border:none;cursor:pointer;transition:all .25s cubic-bezier(.32,.72,0,1),background-position .6s ease;box-shadow:0 8px 28px rgba(201,162,52,.3)}
+    .btn-primary:hover{background-position:right center;transform:translateY(-2px);box-shadow:0 14px 40px rgba(201,162,52,.45)}
     .btn-primary:active{transform:scale(.97)}
     .btn-primary svg{transition:transform .3s cubic-bezier(.32,.72,0,1)}
     .btn-primary:hover svg{transform:translateX(4px)}
@@ -74,7 +76,7 @@
     @media(max-width:768px){.section{padding:3rem 0}}
     .section-header{text-align:center;margin-bottom:3.5rem}
     .section-label{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dorado)}
-    .section-divider{width:40px;height:2px;background:var(--dorado);border-radius:2px;margin:0 auto .75rem}
+    .section-divider{width:40px;height:2px;background:var(--dorado-gradient);border-radius:2px;margin:0 auto .75rem}
     .section h2{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;line-height:1.15;letter-spacing:-.02em;color:var(--grafito-700);margin-bottom:.75rem;margin-top:.75rem}
     .section-desc{font-size:1rem;color:var(--texto-sec);max-width:520px;margin:0 auto;line-height:1.7}
 
@@ -95,7 +97,7 @@
     .service-name{font-size:1.125rem;font-weight:700;color:var(--grafito-700);margin-bottom:.35rem}
     .service-desc{font-size:.875rem;color:var(--texto-sec);margin-bottom:1.25rem;line-height:1.6}
     .service-meta{display:flex;align-items:center;justify-content:space-between}
-    .service-price{font-size:1.5rem;font-weight:800;color:var(--dorado)}
+    .service-price{font-size:1.5rem;font-weight:800;background:var(--dorado-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
     .service-duration{font-size:.75rem;color:var(--texto-sec);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
 
     /* ── Amenities ── */
@@ -116,7 +118,7 @@
     .testimonial-card{background:var(--grafito-900);border-radius:var(--radius-xl);padding:3rem;text-align:center;max-width:700px;margin:2rem auto 0}
     .testimonial-quote{font-size:1.25rem;line-height:1.7;color:rgba(255,255,255,.85);font-weight:500;margin-bottom:1.5rem}
     .testimonial-quote::before{content:"“";font-size:3rem;color:var(--dorado);display:block;margin-bottom:.25rem;font-weight:800;line-height:1}
-    .testimonial-avatar{width:56px;height:56px;border-radius:50%;object-fit:cover;margin:0 auto .75rem;border:2px solid var(--dorado)}
+    .testimonial-avatar{width:56px;height:56px;border-radius:50%;object-fit:cover;margin:0 auto .75rem;border:2px solid var(--dorado);box-shadow:0 0 16px rgba(201,162,52,.2)}
     .testimonial-name{font-size:1rem;font-weight:700;color:white}
     .testimonial-role{font-size:.8125rem;color:rgba(255,255,255,.45)}
 
