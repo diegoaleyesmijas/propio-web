@@ -190,6 +190,18 @@
     .reveal { opacity: 0; transform: translateY(24px); filter: blur(4px); transition: opacity 0.7s cubic-bezier(0.22,0.84,0.44,1), transform 0.7s cubic-bezier(0.22,0.84,0.44,1), filter 0.7s cubic-bezier(0.22,0.84,0.44,1); }
     .reveal.visible { opacity: 1; transform: translateY(0); filter: blur(0); }
 
+    /* Accessibility: respect reduced-motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      .anim-fade-up, .anim-fade-up.d1, .anim-fade-up.d2, .anim-fade-up.d3, .anim-fade-up.d4, .anim-fade-up.d5 { animation: none; opacity: 1; }
+      .reveal { transition: none; opacity: 1; transform: none; filter: none; }
+    }
+
+    /* Keyboard focus visibility */
+    :focus-visible { outline: 2px solid var(--verde-500); outline-offset: 3px; border-radius: 4px; }
+
+    /* Global interactive cursor */
+    a, button, summary, [role="button"], input[type="submit"] { cursor: pointer; }
+
     /* =============================================
        NAVIGATION
     ============================================= */
