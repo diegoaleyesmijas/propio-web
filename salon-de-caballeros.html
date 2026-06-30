@@ -10,9 +10,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --verde-500: #20B29C; --verde-600: #1A9E8A; --verde-700: #138A78; --verde-100: #E0F7F3;
+      --dorado: #C6A45C; --dorado-hover: #B8963E; --dorado-light: #F5EDDC;
+      --verde-500: #20B29C; --verde-700: #138A78; --verde-100: #E0F7F3;
       --grafito-700: #2F3542; --grafito-800: #29303E; --grafito-900: #232833;
-      --marfil: #F6F3EE; --marfil-dark: #EDE9E2; --blanco: #FFFFFF;
+      --marfil: #F5F0E8; --marfil-dark: #EBE4D8; --blanco: #FFFFFF;
       --texto: #2B313D; --texto-sec: #68707D; --borde: #D8DDE3;
       --naranja-500: #E8642C; --naranja-100: #FFF0E8;
       --font: 'Inter', system-ui, -apple-system, sans-serif;
@@ -30,23 +31,23 @@
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
     .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.16,.84,.44,1),transform .7s cubic-bezier(.16,.84,.44,1)}
     .reveal.visible{opacity:1;transform:translateY(0)}
-    :focus-visible{outline:2px solid var(--verde-500);outline-offset:3px}
+    :focus-visible{outline:2px solid var(--dorado);outline-offset:3px}
     a,button,summary,[role=button],input[type=submit]{cursor:pointer}
 
     /* ── Hero ── */
     .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:var(--grafito-900)}
     .hero-bg{position:absolute;inset:0;z-index:0}
     .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.65}
-    .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(35,40,51,.94) 0%,rgba(35,40,51,.5) 60%,rgba(35,40,51,.3) 100%);z-index:1}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(20,16,12,.94) 0%,rgba(35,40,51,.5) 60%,rgba(35,40,51,.35) 100%);z-index:1}
     .hero-orb{position:absolute;border-radius:50%;pointer-events:none;z-index:1;filter:blur(60px);animation:float 6s ease-in-out infinite}
-    .hero-orb-1{width:320px;height:320px;top:-10%;right:-5%;background:radial-gradient(circle,rgba(32,178,156,.15) 0%,transparent 70%)}
-    .hero-orb-2{width:240px;height:240px;bottom:-8%;left:-3%;background:radial-gradient(circle,rgba(32,178,156,.1) 0%,transparent 70%);animation-delay:2s}
+    .hero-orb-1{width:320px;height:320px;top:-10%;right:-5%;background:radial-gradient(circle,rgba(198,164,92,.15) 0%,transparent 70%)}
+    .hero-orb-2{width:240px;height:240px;bottom:-8%;left:-3%;background:radial-gradient(circle,rgba(198,164,92,.1) 0%,transparent 70%);animation-delay:2s}
     .hero-orb-3{width:180px;height:180px;top:40%;right:30%;background:radial-gradient(circle,rgba(232,100,44,.08) 0%,transparent 70%);animation-delay:4s}
     .hero-content{position:relative;z-index:2;max-width:620px;padding:4rem 0}
     .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.8);font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:var(--radius-full);margin-bottom:1.5rem;backdrop-filter:blur(8px)}
-    .hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--verde-500);animation:pulse-dot 2s infinite}
+    .hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--dorado);animation:pulse-dot 2s infinite}
     .hero h1{font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:800;line-height:1.04;letter-spacing:-.03em;color:white;margin-bottom:.75rem}
-    .hero h1 span{color:var(--verde-500)}
+    .hero h1 span{color:var(--dorado)}
     .hero-rating{display:flex;align-items:center;gap:.5rem;margin-bottom:1.5rem}
     .hero-stars{color:#F59E0B;font-size:1.1rem;letter-spacing:2px}
     .hero-review-count{font-size:.875rem;color:rgba(255,255,255,.5)}
@@ -54,12 +55,12 @@
     .hero-stats{display:flex;gap:2rem;margin-bottom:2.5rem}
     .hero-stat{display:flex;flex-direction:column}
     .hero-stat-value{font-size:2rem;font-weight:800;color:white;letter-spacing:-.02em}
-    .hero-stat-value .count{color:var(--verde-500)}
+    .hero-stat-value .count{color:var(--dorado)}
     .hero-stat-label{font-size:.75rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
     .hero-actions{display:flex;gap:.75rem;flex-wrap:wrap}
     .hero-address{margin-top:2rem;font-size:.8125rem;color:rgba(255,255,255,.35);display:flex;align-items:center;gap:.5rem}
-    .btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--verde-500);color:white;font-weight:700;font-size:1rem;padding:16px 32px;border-radius:var(--radius-full);border:none;cursor:pointer;transition:background .25s cubic-bezier(.32,.72,0,1),transform .15s cubic-bezier(.32,.72,0,1),box-shadow .25s;box-shadow:0 8px 28px rgba(32,178,156,.25)}
-    .btn-primary:hover{background:var(--verde-700);transform:translateY(-2px);box-shadow:0 14px 36px rgba(32,178,156,.35)}
+    .btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--dorado);color:white;font-weight:700;font-size:1rem;padding:16px 32px;border-radius:var(--radius-full);border:none;cursor:pointer;transition:background .25s cubic-bezier(.32,.72,0,1),transform .15s cubic-bezier(.32,.72,0,1),box-shadow .25s;box-shadow:0 8px 28px rgba(198,164,92,.25)}
+    .btn-primary:hover{background:var(--dorado-hover);transform:translateY(-2px);box-shadow:0 14px 36px rgba(198,164,92,.35)}
     .btn-primary:active{transform:scale(.97)}
     .btn-primary svg{transition:transform .3s cubic-bezier(.32,.72,0,1)}
     .btn-primary:hover svg{transform:translateX(4px)}
@@ -72,8 +73,8 @@
     .section{padding:5rem 0}.section-white{background:var(--blanco)}.section-marfil{background:var(--marfil)}.section-dark{background:var(--grafito-900)}
     @media(max-width:768px){.section{padding:3rem 0}}
     .section-header{text-align:center;margin-bottom:3.5rem}
-    .section-label{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--verde-600)}
-    .section-divider{width:40px;height:2px;background:var(--verde-500);border-radius:2px;margin:0 auto .75rem}
+    .section-label{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dorado)}
+    .section-divider{width:40px;height:2px;background:var(--dorado);border-radius:2px;margin:0 auto .75rem}
     .section h2{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;line-height:1.15;letter-spacing:-.02em;color:var(--grafito-700);margin-bottom:.75rem;margin-top:.75rem}
     .section-desc{font-size:1rem;color:var(--texto-sec);max-width:520px;margin:0 auto;line-height:1.7}
 
@@ -81,20 +82,20 @@
     .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;padding-top:3rem;border-top:1px solid var(--borde)}
     @media(max-width:768px){.trust-grid{grid-template-columns:repeat(2,1fr)}}
     .trust-item{text-align:center;padding:1.5rem .75rem}
-    .trust-icon{width:48px;height:48px;border-radius:12px;background:var(--verde-100);display:flex;align-items:center;justify-content:center;margin:0 auto .75rem;color:var(--verde-700)}
+    .trust-icon{width:48px;height:48px;border-radius:12px;background:var(--dorado-light);display:flex;align-items:center;justify-content:center;margin:0 auto .75rem;color:var(--dorado-hover)}
     .trust-value{font-size:1.5rem;font-weight:800;color:var(--grafito-700);letter-spacing:-.02em}
     .trust-label{font-size:.75rem;color:var(--texto-sec);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
 
     /* ── Services ── */
     .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
     .service-card{position:relative;background:var(--marfil);border:1px solid var(--borde);border-radius:var(--radius-xl);padding:2rem;transition:transform .3s cubic-bezier(.32,.72,0,1),box-shadow .3s,border-color .3s;cursor:pointer}
-    .service-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(35,40,51,.1);border-color:rgba(32,178,156,.25)}
+    .service-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(35,40,51,.1);border-color:rgba(198,164,92,.25)}
     .service-card:active{transform:scale(.98)}
-    .service-number{font-size:3rem;font-weight:800;color:var(--verde-100);position:absolute;top:1rem;right:1.5rem;line-height:1;pointer-events:none}
+    .service-number{font-size:3rem;font-weight:800;color:var(--dorado-light);position:absolute;top:1rem;right:1.5rem;line-height:1;pointer-events:none}
     .service-name{font-size:1.125rem;font-weight:700;color:var(--grafito-700);margin-bottom:.35rem}
     .service-desc{font-size:.875rem;color:var(--texto-sec);margin-bottom:1.25rem;line-height:1.6}
     .service-meta{display:flex;align-items:center;justify-content:space-between}
-    .service-price{font-size:1.5rem;font-weight:800;color:var(--verde-600)}
+    .service-price{font-size:1.5rem;font-weight:800;color:var(--dorado)}
     .service-duration{font-size:.75rem;color:var(--texto-sec);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
 
     /* ── Amenities ── */
@@ -114,15 +115,15 @@
     /* ── Testimonial ── */
     .testimonial-card{background:var(--grafito-900);border-radius:var(--radius-xl);padding:3rem;text-align:center;max-width:700px;margin:2rem auto 0}
     .testimonial-quote{font-size:1.25rem;line-height:1.7;color:rgba(255,255,255,.85);font-weight:500;margin-bottom:1.5rem}
-    .testimonial-quote::before{content:"“";font-size:3rem;color:var(--verde-500);display:block;margin-bottom:.25rem;font-weight:800;line-height:1}
-    .testimonial-avatar{width:56px;height:56px;border-radius:50%;object-fit:cover;margin:0 auto .75rem;border:2px solid var(--verde-500)}
+    .testimonial-quote::before{content:"“";font-size:3rem;color:var(--dorado);display:block;margin-bottom:.25rem;font-weight:800;line-height:1}
+    .testimonial-avatar{width:56px;height:56px;border-radius:50%;object-fit:cover;margin:0 auto .75rem;border:2px solid var(--dorado)}
     .testimonial-name{font-size:1rem;font-weight:700;color:white}
     .testimonial-role{font-size:.8125rem;color:rgba(255,255,255,.45)}
 
     /* ── CTA ── */
     .cta-section{position:relative;background:var(--grafito-700);text-align:center;padding:5rem 0;overflow:hidden}
     .cta-orb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(80px)}
-    .cta-orb-1{width:400px;height:400px;top:-30%;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(32,178,156,.12) 0%,transparent 70%)}
+    .cta-orb-1{width:400px;height:400px;top:-30%;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(198,164,92,.12) 0%,transparent 70%)}
     .cta-section h2{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;color:white;margin-bottom:1rem;position:relative;z-index:1}
     .cta-section p{color:rgba(255,255,255,.55);margin-bottom:2rem;max-width:480px;margin-left:auto;margin-right:auto;position:relative;z-index:1}
     .cta-section .btn-primary{position:relative;z-index:1}
@@ -131,8 +132,8 @@
     .footer{background:var(--grafito-900);color:rgba(255,255,255,.35);text-align:center;padding:3rem 0 2rem;font-size:.8rem}
     .footer-propio{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-full);padding:.5rem 1.25rem;margin-bottom:1.5rem;font-size:.8125rem;color:rgba(255,255,255,.5);font-weight:500}
     .footer-propio strong{color:var(--verde-500)}
-    .footer a{color:var(--verde-500);font-weight:600;transition:color .2s}
-    .footer a:hover{color:var(--verde-400)}
+    .footer a{color:var(--dorado);font-weight:600;transition:color .2s}
+    .footer a:hover{color:var(--dorado-hover)}
 
     @media(max-width:768px){.testimonial-card{padding:2rem}}
   </style>
@@ -219,12 +220,12 @@
         <h2>Tu experiencia</h2>
       </div>
       <div class="amenities-grid">
-        <div class="amenity-item reveal"><svg width="16" height="16" fill="none" stroke="var(--verde-600)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Se aceptan tarjetas de crédito</div>
-        <div class="amenity-item reveal" style="transition-delay:.05s"><svg width="16" height="16" fill="none" stroke="var(--verde-600)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Fácil acceso para personas con capacidad reducida</div>
-        <div class="amenity-item reveal" style="transition-delay:.1s"><svg width="16" height="16" fill="none" stroke="var(--verde-600)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Adaptado para niños</div>
-        <div class="amenity-item reveal" style="transition-delay:.15s"><svg width="16" height="16" fill="none" stroke="var(--verde-600)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Se permiten mascotas</div>
-        <div class="amenity-item reveal" style="transition-delay:.2s"><svg width="16" height="16" fill="none" stroke="var(--verde-600)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Wi-Fi gratuito</div>
-        <div class="amenity-item reveal" style="transition-delay:.25s"><svg width="16" height="16" fill="none" stroke="var(--verde-600)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Programa de fidelidad</div>
+        <div class="amenity-item reveal"><svg width="16" height="16" fill="none" stroke="var(--dorado)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Se aceptan tarjetas de crédito</div>
+        <div class="amenity-item reveal" style="transition-delay:.05s"><svg width="16" height="16" fill="none" stroke="var(--dorado)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Fácil acceso para personas con capacidad reducida</div>
+        <div class="amenity-item reveal" style="transition-delay:.1s"><svg width="16" height="16" fill="none" stroke="var(--dorado)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Adaptado para niños</div>
+        <div class="amenity-item reveal" style="transition-delay:.15s"><svg width="16" height="16" fill="none" stroke="var(--dorado)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Se permiten mascotas</div>
+        <div class="amenity-item reveal" style="transition-delay:.2s"><svg width="16" height="16" fill="none" stroke="var(--dorado)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Wi-Fi gratuito</div>
+        <div class="amenity-item reveal" style="transition-delay:.25s"><svg width="16" height="16" fill="none" stroke="var(--dorado)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Programa de fidelidad</div>
       </div>
     </div>
   </section>
@@ -308,7 +309,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-propio">
-        <svg width="14" height="14" fill="none" stroke="var(--verde-500)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+        <svg width="14" height="14" fill="none" stroke="var(--verde-500)" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
         Sistema de reservas gestionado por <strong>PROPIO</strong>
       </div>
       <p>Código de Caballeros Salon · Calle la Unión, 20 · 29640 Fuengirola</p>
